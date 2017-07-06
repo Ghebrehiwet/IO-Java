@@ -1,21 +1,7 @@
 # IO Java
-package com.ghebre;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
-
     public static void main(String[] args) throws IOException {
-
-
         createFiles("myDir");
         getFiles("myDir");
         contentAdder("abc.txt");
@@ -26,11 +12,9 @@ public class Main {
         mergeAllContentsOfAllFilesIntoOneFile();
         writeContentsFoundInOneFileButNotInOtherFile();
         removeDuplicateNumbers();
-
-
     }
 
-1. Creating multiple files: Passing name of a folder, many files are created
+//1. Creating multiple files: Passing name of a folder, many files are created
     public static void createFiles(String myDir) throws IOException {
         List<String> myListOfFiles = new ArrayList<>();
         for(int i = 0; i < 9; i++) {
@@ -38,8 +22,8 @@ public class Main {
             f.createNewFile();
         }
     }
-................................................................................................
-2. Getting names of files: 
+//................................................................................................
+//2. Getting names of files: 
     public static void getFiles(String myDir){
         myDir = "myDir";
         File myFiles = new File(myDir);
@@ -55,8 +39,8 @@ public class Main {
         System.out.println(count);
     }
 
-................................................................................................
-3. Creating a file using FileWriter and adding contents to it.
+//................................................................................................
+//3. Creating a file using FileWriter and adding contents to it.
     public static  void contentAdder(String fileName) throws IOException {
 
         FileWriter myFile = new FileWriter("abc.txt", true);
@@ -71,8 +55,8 @@ public class Main {
         myFile.close();
     }
 
-................................................................................................
-4. Read contents of a file using FileReader. INTEGER
+//................................................................................................
+//4. Read contents of a file using FileReader. INTEGER
     public static void getReadFile(String fileName) throws IOException {
         FileReader fr = new FileReader("abc.txt");
         int i = fr.read();
@@ -83,8 +67,8 @@ public class Main {
         fr.close();
     }
 
-................................................................................................
-5. Read contents of a file using FileReader. CHAR ARRAY
+//................................................................................................
+//5. Read contents of a file using FileReader. CHAR ARRAY
     public static void readFileAsChar(String fileName) throws IOException {
         File file = new File("abc.txt");
         char[] myCharacters = new char[(int)file.length()];
@@ -95,8 +79,8 @@ public class Main {
         }
     }
 
- ................................................................................................
- 6. merging contents of two files line by line alternatively
+// ................................................................................................
+ //6. merging contents of two files line by line alternatively
 
     public static void twoFilesMerge(String a, String b) throws IOException {
         PrintWriter pw = new PrintWriter("myDir/abc.txt");
@@ -119,8 +103,8 @@ public class Main {
         br2.close();
     }
 
-................................................................................................
- 7. merging contents of two files line by line contents of one file after the other
+//................................................................................................
+ //7. merging contents of two files line by line contents of one file after the other
     public static void twoFilesMergeOneAfterTheOther(String a, String b) throws IOException {
         File f = new File("myDir/abc2.txt");
         PrintWriter pw = new PrintWriter(f);
@@ -145,8 +129,8 @@ public class Main {
         br1.close();
         br2.close();
     }
-................................................................................................
-8. create a file and write the contents of all other files under a single directory
+//................................................................................................
+//8. create a file and write the contents of all other files under a single directory
     public static  void mergeAllContentsOfAllFilesIntoOneFile() throws IOException {
         File f = new File("myDir/output.txt");
         PrintWriter pw = new PrintWriter(f);
@@ -164,8 +148,8 @@ public class Main {
         pw.flush();
     }
 
-................................................................................................
-9. Out of two files, extract all the items in one file that are not in the second file, and write them in a third file
+//................................................................................................
+//9. Out of two files, extract all the items in one file that are not in the second file, and write them in a third file
     public static void writeContentsFoundInOneFileButNotInOtherFile() throws IOException {
         PrintWriter pw = new PrintWriter("myDir/mn4.txt");
         BufferedReader br1 = new BufferedReader((new FileReader("myDir/mn5.txt")));
@@ -189,8 +173,8 @@ public class Main {
         pw.flush();
     }
 
-................................................................................................
-10. write a program to remove duplicate numbers
+//................................................................................................
+//10. write a program to remove duplicate numbers
     public static  void removeDuplicateNumbers() throws IOException {
         PrintWriter pw = new PrintWriter("myDir/mn8.txt");
         BufferedReader br1 = new BufferedReader(new FileReader("myDir/mn7.txt"));
