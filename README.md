@@ -1,5 +1,6 @@
 # IO Java
 
+<<<<<<< HEAD
 public class Main {
     public static void main(String[] args) throws IOException {
         createFiles("myDir");
@@ -198,3 +199,6 @@ public class Main {
         }
     }
 }
+=======
+ 
+>>>>>>> 3ad6a72834c642eca6328f831094afc8ce671122
