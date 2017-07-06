@@ -23,7 +23,7 @@ public class Main {
         }
     }
 //................................................................................................
-//2. Getting names of files: 
+//2. Getting names of files:
     public static void getFiles(String myDir){
         myDir = "myDir";
         File myFiles = new File(myDir);
@@ -153,7 +153,7 @@ public class Main {
     public static void writeContentsFoundInOneFileButNotInOtherFile() throws IOException {
         PrintWriter pw = new PrintWriter("myDir/mn4.txt");
         BufferedReader br1 = new BufferedReader((new FileReader("myDir/mn5.txt")));
-        String item1 = br1.readLine(); 
+        String item1 = br1.readLine();
         while(item1 != null){
             boolean available = false;
             BufferedReader br2 = new BufferedReader(new FileReader("myDir/mn6.txt"));
@@ -195,6 +195,6 @@ public class Main {
                 pw.flush();
             }
             item1 = br1.readLine();
-        } 
+        }
     }
 }
